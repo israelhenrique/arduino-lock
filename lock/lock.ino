@@ -1,9 +1,21 @@
-void setup() {
-  // put your setup code here, to run once:
+#include <Stepper.h> 
+ 
+const int stepsPerRevolution = 500; 
+  
+//Inicializa a biblioteca utilizando as portas de 8 a 11 para 
+//ligacao ao motor 
+Stepper myStepper(stepsPerRevolution, 8,10,9,11); 
+  
+void setup() 
+{ 
+ //Determina a velocidade inicial do motor 
+ myStepper.setSpeed(60);
+} 
+  
+void loop() 
+{ 
 
-}
-
-void loop() {
-  // put your main code here, to run repeatedly:
-
+ myStepper.step(682); 
+ delay(100); 
+ 
 }
